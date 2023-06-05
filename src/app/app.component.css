@@ -11,3 +11,14 @@
     width: 50%;
     justify-content: space-between;
 }
+
+a {
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+}
+
+.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
