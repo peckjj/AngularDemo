@@ -1,7 +1,11 @@
 <div class="content strong-border">
     <h3>Search for your favorite Pokemon!</h3>
     <div class="input-bar">
-        <input type="text"/>
-        <button>GO!</button>
+        <input [(ngModel)]="myInput"  type="text"/>
+        <button (click)="goButtonClicked()">GO!</button>
+    </div>
+
+    <div class="display">
+      <app-pokemon-display [pokemon]="dummyPokemon"></app-pokemon-display>
     </div>
 </div>

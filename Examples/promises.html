@@ -9,7 +9,7 @@
 
         let r = new Promise((res) => {
           console.log("B");
-          res();
+          res(5);
         });
 
         console.log("C");
@@ -23,11 +23,12 @@
         let r = await new Promise((res) => {
           setTimeout(() => {
             console.log("B");
+            res(5);
           }, 1000);
-          res();
         });
 
         console.log("C");
+        console.log(r);
       }
 
       //foo();
@@ -42,7 +43,7 @@
 
         console.log("A");
 
-        let r = new Promise((res) => {
+        let r = await new Promise((res) => {
           isWaiting = true;
           setTimeout(() => {
             console.log("B");
