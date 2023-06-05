@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# Demo Steps
+
+In this demo, all topics from the presentation will be implemented.
+
+1. Create a class (or an interface) that describes a Pokemon from the Pokemon API
+2. Create a new Component that will display Data for a Pokemon object.
+    - Using data binding, we will link the fields of the Pokemon object to the UI
+3. Create a service that will provide pokemon data
+4. When the **GO!** button is clicked, use an observable subscription to get a Pokemon object from the service.
+5. The service should make a GET request to the Pokemon API, convert the data into a Pokemon object, and return the observable
+6. The Pokemon object that is passed to the Pokemon component should update along with the UI
