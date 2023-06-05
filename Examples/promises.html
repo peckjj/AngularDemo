@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Async Examples</title>
+  </head>
+  <body>
+    <script>
+      function baz() {
+        console.log("A");
+
+        let r = new Promise((res) => {
+          console.log("B");
+          res();
+        });
+
+        console.log("C");
+      }
+
+      //baz();
+
+      async function foo() {
+        console.log("A");
+
+        let r = await new Promise((res) => {
+          setTimeout(() => {
+            console.log("B");
+          }, 1000);
+          res();
+        });
+
+        console.log("C");
+      }
+
+      //foo();
+
+      async function bar() {
+        let isWaiting = false;
+        let interval = setInterval(() => {
+          if (isWaiting) {
+            console.log("Waiting...");
+          }
+        }, 100);
+
+        console.log("A");
+
+        let r = new Promise((res) => {
+          isWaiting = true;
+          setTimeout(() => {
+            console.log("B");
+            clearInterval(interval);
+            res();
+          }, 10000);
+        });
+
+        console.log("C");
+      }
+
+      bar();
+    </script>
+  </body>
+</html>
+
+
